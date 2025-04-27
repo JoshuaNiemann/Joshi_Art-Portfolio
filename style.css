@@ -45,9 +45,9 @@ section {
 
 .gallery {
     display: flex;
-    justify-content: center;
+    justify-content: fill;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 .gallery img {
