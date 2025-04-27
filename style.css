@@ -45,16 +45,23 @@ section {
 
 .gallery {
     display: flex;
-    justify-content: fill;
     flex-wrap: wrap;
     gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 
 .gallery img {
-    width: 200px;
-    height: auto;
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: scale(0.3s) ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.05);
 }
 
 footer {
