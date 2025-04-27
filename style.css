@@ -43,6 +43,10 @@ section {
     margin-bottom: 40px;
 }
 
+#REMINDER {
+    color: red;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
