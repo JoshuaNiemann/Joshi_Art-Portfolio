@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshi_Art – 3D Asset Creator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mein Artist Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-<header>
+  <!-- Header / großes Banner -->
+  <header class="hero">
     <h1>Joshi_Art</h1>
-    <p>2D/3D Artist</p>
-</header>
+  </header>
 
-<nav>
-    <a href="#about">Über mich</a>
-    <a href="#projects">Projekte</a>
-    <a href="#contact">Kontakt</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#2d">2D Art</a></li>
+      <li><a href="#3d">3D Art</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
 
-<main>
-    <section id="REMINDER">
-      <p>This Site is Work in Progress - Site will be Updated soon</p>
-    </section>
+  <!-- 2D Banner -->
+  <section class="banner" id="2d">
+    <div class="banner-content">
+      <h2>2D Arbeiten</h2>
+      <a href="2d.html" class="button">Mehr sehen</a>
+    </div>
+  </section>
 
-    <section id="about">
-        <h2>about</h2>
-        <p>Hi, ich bin Joshi, 3D Artist mit Fokus auf stylized Assets für Games. Ich liebe es, kreative Welten zu erschaffen.</p>
-    </section>
+  <!-- 3D Banner -->
+  <section class="banner" id="3d">
+    <div class="banner-content">
+      <h2>3D Arbeiten</h2>
+      <a href="3d.html" class="button">Mehr sehen</a>
+    </div>
+  </section>
 
-    <section id="projects">
-        <h2>Projekte</h2>
-        <div class="gallery">
-            <img src="projekt1.png" alt="Projekt 1">
-            <img src="projekt2.png" alt="Projekt 2">
-            <img src="projekt3.png" alt="Projekt 3">
-            <img src="projekt4.jpg" alt="Projekt 4">
-            <img src="projekt5.png" alt="Projekt 5">
-            <img src="projekt6.jpg" alt="Projekt 6">
-            <img src="projekt7.jpg" alt="Projekt 7">
-            <img src="projekt8.png" alt="Projekt 8">
-            <img src="projekt9.png" alt="Projekt 9">
-            <img src="projekt10.png" alt="Projekt 10">
+  <!-- Projekte Banner -->
+  <section class="banner" id="projects">
+    <div class="banner-content">
+      <h2>Projekte</h2>
+      <a href="projekte.html" class="button">Mehr sehen</a>
+    </div>
+  </section>
 
-        </div>
-    </section>
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn">↑</button>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>My E-Mail: <a href="mailto:Niemann.Joshua@yahoo.com">Niemann.Joshua@yahoo.com</a></p>
-    </section>
-</main>
-
-<footer>
-    <p>© 2025 Joshua Niemann. Alle Rechte vorbehalten.</p>
-</footer>
+  <!-- Footer -->
+  <footer id="kontakt">
+    <p>© 2025 Dein Name – Alle Rechte vorbehalten</p>
+    <p>Kontakt: <a href="mailto:deinemail@example.com">deinemail@example.com</a></p>
+  </footer>
 
 </body>
 </html>
