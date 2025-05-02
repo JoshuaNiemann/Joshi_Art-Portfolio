@@ -77,13 +77,13 @@ body{
 }
 
 #hero > .mid_layer {
-    background-image: url('images/midground.png');
+    background-image: url('images/Midground.png');
     background-size: cover;
     background-position: top;
 }
 
 #hero > .top_layer {
-    background-image: url('images/forground.png');
+    background-image: url('images/Forground.png');
     background-size: cover;
     background-position: top;
 }
