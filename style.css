@@ -10,104 +10,195 @@ body{
     background-color: #1a3f2b;
 }
 
+/* ======================= NAVBAR ===================== */
+/*#region*/
+
+.navbar {
+    background: rgb(24, 37, 32);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: top;
+    z-index: 1000;
+}
+
+
+
+/*#endregion*/
+
+
+/* ======================= Content ===================== */
+/*#region Content*/
+
 .parallax_wrapper{
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    perspective: 300px;
+    perspective: 1000px;
     scroll-snap-type: y proximity;
 }
 
+.hero_screen {
+    scroll-snap-align: none;
+    position: relative;
+    z-index: -1;
+}
+.aboutMe_screen {
+    scroll-snap-align: start;
+    position: relative;
+    
+}
+.outro_screen {
+    scroll-snap-align: start;
+    z-index: 11;
+}
+
+/* ------------------------ */
 
 .parallax_group {
     position: relative;
-    height: 150vh;
+    height: 100vh;
     transform-style: preserve-3d;
 }
 
 .parallax_layer {
     position: absolute;
     inset: 0;
-    height: 150vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: top;
 }
 
-.back_layer {
+
+/* --------------- LAYERS --------------------- */
+
+.P1_layer {
     /* scale calculation: 1+ ((Z transform value * -1) / perspective) */
-    transform: translateZ(-300px) scale(2.2);
-}
-
-.mid_layer {
-    transform: translateZ(-200px) scale(1.8);
-}
-
-.logo_layer{
-    transform: translateY(-30%) translateZ(-100px) scale(0.5);
-    
-}
-
-.top_layer {
-    transform: translateZ(0);
-}
-
-.hero_screen {
-    scroll-snap-align: none;
-}
-.aboutMe_screen {
-    scroll-snap-align: start;
-}
-.outro_screen {
-    scroll-snap-align: start;
-}
-
-
-
-
-#hero {
-    z-index: -1;
-    
-}
-
-#hero > .back_layer {
-    background-image: url('images/background.png');
-    background-size: cover;
-    background-position: top;
-}
-
-#hero > .mid_layer {
-    background-image: url('images/Midground.png');
-    background-size: cover;
-    background-position: top;
-}
-
-#hero > .top_layer {
-    background-image: url('images/Forground.png');
-    background-size: cover;
-    background-position: top;
-}
-
-#intro {
+    transform: translateZ(-1000px) scale(3.555);
     z-index: 1;
 }
+.P2_layer {
+    transform: translateZ(-900px) scale(3.38);
+    z-index: 2;
+}
+.P3_layer {
+    transform: translateZ(-800px) scale(3.2);
+    z-index: 3;
+}
+.P4_layer {
+    transform: translateZ(-700px) scale(3.025);
+    z-index: 4;
+}
+.P5_layer {
+    transform: translateZ(-600px) scale(2.848);
+    z-index: 5;
+}
+.P6_layer {
+    transform: translateZ(-500px) scale(2.67);
+    z-index: 6;
+}
+.P7_layer {
+    transform: translateZ(-400px) scale(2.49);
+    z-index: 6;
+}
+.P8_layer {
+    transform: translateZ(-300px) scale(2.312);
+    z-index: 6;
+}
+.P9_layer {
+    transform: translateZ(-200px) scale(2.135);
+    z-index: 6;
+}
+.P10_layer {
+    transform: translateZ(-100px) scale(1.956);
+    z-index: 6;
+}
+.Base_layer {
+    transform: translateZ(0) scale(1.78);
+    z-index: 7;
+}
 
+/* -------------- Hero -----------------*/
 
+#hero {
+    position: relative;
+    height: 100vh;
+    z-index: 0;
+}
 
+ #hero > .P1_layer {
+    background-image: url('images/Parallax_Hero/1.png');
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip:content-box;
+}
+ 
+#hero > .P3_layer {
+    background-image: url('images/Parallax_Hero/2.png');
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
 
+#hero > .P5_layer {
+    background-image: url('images/Parallax_Hero/3.png');
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
 
+#hero > .P7_layer {
+    background-image: url('images/Parallax_Hero/4.png');
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
 
+#hero > .P9_layer {
+    background-image: url('images/Parallax_Hero/5.png');
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
 
+#hero > .Base_layer {
+    background-image: url('images/Parallax_Hero/6.png');
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
 
+/* ---------------- 2. Screen ---------------*/
 
 .aboutMe_screen{
     height: 100vh;
     background-color: #1a3f2b;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
+    isolation: isolate;
 }
+
+#intro > .Base_layer {
+    background-image: url(images/Parallax_Hero/full.png);
+    background-size: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* ---------------- 3. Screen ---------------*/
+
 .outro_screen{
     height: 100vh;
     background-color: teal;
@@ -115,10 +206,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 
-
+/*#endregion Content*/
 
 
 
