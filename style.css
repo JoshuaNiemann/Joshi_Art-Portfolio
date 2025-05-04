@@ -36,7 +36,7 @@ body{
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    perspective: 1000px;
+    perspective: 100px;
     scroll-snap-type: y proximity;
 }
 
@@ -75,61 +75,65 @@ body{
 
 /* --------------- LAYERS --------------------- */
 
-.P1_layer {
+.B1_layer {
     /* scale calculation: 1+ ((Z transform value * -1) / perspective) */
-    transform: translateZ(-1000px) scale(3.555);
+    transform: translateZ(-10000px) scale(179.7);
     z-index: 1;
 }
-.P2_layer {
-    transform: translateZ(-900px) scale(3.38);
+.B2_layer {
+    transform: translateZ(-5000px) scale(3.38);
     z-index: 2;
 }
-.P3_layer {
-    transform: translateZ(-800px) scale(3.2);
+.B3_layer {
+    transform: translateZ(-2000px) scale(37.3);
     z-index: 3;
 }
-.P4_layer {
+.B4_layer {
     transform: translateZ(-700px) scale(3.025);
     z-index: 4;
 }
-.P5_layer {
-    transform: translateZ(-600px) scale(2.848);
+.B5_layer {
+    transform: translateZ(-1000px) scale(19.59);
     z-index: 5;
 }
-.P6_layer {
+.B6_layer {
     transform: translateZ(-500px) scale(2.67);
     z-index: 6;
 }
-.P7_layer {
-    transform: translateZ(-400px) scale(2.49);
-    z-index: 6;
+.B7_layer {
+    transform: translateZ(-500px) scale(10.69);
+    z-index: 7;
 }
-.P8_layer {
+.B8_layer {
     transform: translateZ(-300px) scale(2.312);
-    z-index: 6;
+    z-index: 8;
 }
-.P9_layer {
-    transform: translateZ(-200px) scale(2.135);
-    z-index: 6;
+.B9_layer {
+    transform: translateZ(-250px) scale(6.235);
+    z-index: 10;
 }
-.P10_layer {
+.B10_layer {
     transform: translateZ(-100px) scale(1.956);
-    z-index: 6;
+    z-index: 11;
 }
 .Base_layer {
     transform: translateZ(0) scale(1.78);
-    z-index: 7;
+    z-index: 12;
+}
+.T1_layer {
+    transform: translateZ(300px) scale(1.25);
+    z-index: 13;
+}
+.T2_layer {
+    transform: translateZ(0) scale(1);
+    z-index: 14;
 }
 
 /* -------------- Hero -----------------*/
 
-#hero {
-    position: relative;
-    height: 100vh;
-    z-index: 0;
-}
 
- #hero > .P1_layer {
+
+ #hero > .B1_layer {
     background-image: url('images/Parallax_Hero/1.png');
     background-size: 100vh;
     background-position: center;
@@ -137,7 +141,7 @@ body{
     background-clip:content-box;
 }
  
-#hero > .P3_layer {
+#hero > .B3_layer {
     background-image: url('images/Parallax_Hero/2.png');
     background-size: 100vh;
     background-position: center;
@@ -145,7 +149,7 @@ body{
     background-clip: content-box;
 }
 
-#hero > .P5_layer {
+#hero > .B5_layer {
     background-image: url('images/Parallax_Hero/3.png');
     background-size: 100vh;
     background-position: center;
@@ -153,7 +157,7 @@ body{
     background-clip: content-box;
 }
 
-#hero > .P7_layer {
+#hero > .B7_layer {
     background-image: url('images/Parallax_Hero/4.png');
     background-size: 100vh;
     background-position: center;
@@ -161,13 +165,32 @@ body{
     background-clip: content-box;
 }
 
-#hero > .P9_layer {
+#hero > .B9_layer {
     background-image: url('images/Parallax_Hero/5.png');
     background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-clip: content-box;
 }
+
+.Logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+    
+
+}
+.Logo-img {
+    transform: translateY(-30%);
+    padding: 0;
+    margin: 0;
+    width: min(90vh, 90%);
+}
+
 
 #hero > .Base_layer {
     background-image: url('images/Parallax_Hero/6.png');
