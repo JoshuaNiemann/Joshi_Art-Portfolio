@@ -5,9 +5,11 @@
 }
 
 body{
+    height: 100%;
     font-size: 4em;
     color: white;
-    background-color: #1a3f2b;
+    background-color: #193d24;
+    overflow: hidden;
 }
 
 /* ======================= NAVBAR ===================== */
@@ -38,20 +40,24 @@ body{
     overflow-y: auto;
     perspective: 100px;
     scroll-snap-type: y proximity;
+    position: relative;
 }
 
 .hero_screen {
     scroll-snap-align: none;
     position: relative;
+    height: 100vh;
     z-index: -1;
 }
 .aboutMe_screen {
     scroll-snap-align: start;
+    height: 100vh;
     position: relative;
     
 }
 .outro_screen {
     scroll-snap-align: start;
+    max-height: 100vh;
     z-index: 11;
 }
 
@@ -59,14 +65,15 @@ body{
 
 .parallax_group {
     position: relative;
-    height: 100vh;
+    width: auto;
     transform-style: preserve-3d;
+    height: 100vh;
+    overflow-y: 300vh;
 }
 
 .parallax_layer {
     position: absolute;
     inset: 0;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: top;
@@ -77,7 +84,7 @@ body{
 
 .B1_layer {
     /* scale calculation: 1+ ((Z transform value * -1) / perspective) */
-    transform: translateZ(-10000px) scale(179.7);
+    transform: translateZ(-10000px) scale(240);
     z-index: 1;
 }
 .B2_layer {
@@ -85,7 +92,7 @@ body{
     z-index: 2;
 }
 .B3_layer {
-    transform: translateZ(-2000px) scale(37.3);
+    transform: translateZ(-2000px) scale(49.9);
     z-index: 3;
 }
 .B4_layer {
@@ -93,7 +100,7 @@ body{
     z-index: 4;
 }
 .B5_layer {
-    transform: translateZ(-1000px) scale(19.59);
+    transform: translateZ(-1000px) scale(26.15);
     z-index: 5;
 }
 .B6_layer {
@@ -101,7 +108,7 @@ body{
     z-index: 6;
 }
 .B7_layer {
-    transform: translateZ(-500px) scale(10.69);
+    transform: translateZ(-500px) scale(14.28);
     z-index: 7;
 }
 .B8_layer {
@@ -109,7 +116,7 @@ body{
     z-index: 8;
 }
 .B9_layer {
-    transform: translateZ(-250px) scale(6.235);
+    transform: translateZ(-250px) scale(8.34);
     z-index: 10;
 }
 .B10_layer {
@@ -117,7 +124,7 @@ body{
     z-index: 11;
 }
 .Base_layer {
-    transform: translateZ(0) scale(1.78);
+    transform: translateZ(0) scale(2.38);
     z-index: 12;
 }
 .T1_layer {
@@ -131,46 +138,44 @@ body{
 
 /* -------------- Hero -----------------*/
 
-
+#hero {
+    height: 100vh;
+    background-clip: content-box;
+}
 
  #hero > .B1_layer {
-    background-image: url('images/Parallax_Hero/1.png');
+    background-image: url('images/Parallax_Hero/1_wide.png');
     background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip:content-box;
 }
  
 #hero > .B3_layer {
-    background-image: url('images/Parallax_Hero/2.png');
+    background-image: url('images/Parallax_Hero/2_wide.png');
     background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip: content-box;
 }
 
 #hero > .B5_layer {
-    background-image: url('images/Parallax_Hero/3.png');
+    background-image: url('images/Parallax_Hero/3_wide.png');
     background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip: content-box;
 }
 
 #hero > .B7_layer {
-    background-image: url('images/Parallax_Hero/4.png');
+    background-image: url('images/Parallax_Hero/4_wide.png');
     background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip: content-box;
 }
 
 #hero > .B9_layer {
-    background-image: url('images/Parallax_Hero/5.png');
+    background-image: url('images/Parallax_Hero/5_wide.png');
     background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip: content-box;
 }
 
 .Logo {
@@ -180,9 +185,6 @@ body{
     height: 100vh;
     padding: 0;
     margin: 0;
-    
-    
-
 }
 .Logo-img {
     transform: translateY(-30%);
@@ -192,44 +194,53 @@ body{
 }
 
 
-#hero > .Base_layer {
+/* #hero > .Base_layer {
     background-image: url('images/Parallax_Hero/6.png');
     background-size: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-clip: content-box;
-}
+} */
 
 /* ---------------- 2. Screen ---------------*/
 
 .aboutMe_screen{
     height: 100vh;
-    background-color: #1a3f2b;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    isolation: isolate;
+    /* border: 0.1px solid red; */
 }
 
-#intro > .Base_layer {
-    background-image: url(images/Parallax_Hero/full.png);
+#intro > .Base_layer{
+    background-image: url(images/Parallax_Hero/full2_wide.png);
     background-size: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-clip: content-box;
+
 }
 
 
 /* ---------------- 3. Screen ---------------*/
 
 .outro_screen{
+    background-color: #193d24;
     height: 100vh;
-    background-color: teal;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 11;
+    /* border: 0.1px solid red; */
+}
+
+#outro > .Base_layer {
+    /* background-image: url(images/Parallax_Hero/full_wide.png); */
+    background-size: 100vh;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-clip: content-box;
 }
 
 
