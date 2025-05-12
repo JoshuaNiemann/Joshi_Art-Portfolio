@@ -2,54 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="Home" content="width=device-width, initial-scale=1.0">
-    <title>Joshi_Art_Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshi_Art Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!-- <div class="navbar">
-        <div class="navbar_container">
-            <a href="/" class="navbar_logo">Joshi_Art</a>
-            <div class="navbar_toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar_menu">
-                <li class="navbar_item">
-                    <a href="/" class="navbar_links">Home</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="/" class="navbar_links">Projekts</a>
-                </li>
-                <li class="navbar_item">
-                    <a href="/" class="navbar_links">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div> -->
-    <div class="parallax_wrapper">    
-        <div class="parallax_group hero_screen" id="hero">
-            <div class="parallax_layer B1_layer"></div>
-            <div class="parallax_layer B3_layer"></div>
-            <div class="parallax_layer B5_layer"></div>
-            <div class="parallax_layer B7_layer"></div>
-            <div class="parallax_layer B9_layer"></div>
-            <div class="Logo"> <img class="Logo-img" src="images/Joshi_Art_Logo.png" alt=""></div>
-            <!-- <div class="parallax_layer Base_layer"></div> -->
-        </div>
-        <div class="parallax_group aboutMe_screen" id="intro">
-            <div class="parallax_layer Base_layer"></div>
-        </div>
-        <div class="parallax_group outro_screen" id="outro">
-            <div class="parallax_layer Base_layer"></div>
-        </div>
-        
+    <header>
+        <a href="#" class="logo"></a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/Parallax_Hero/1_wide.png" id="B0">
+        <img src="images/Parallax_Hero/2_wide.png" id="B1">
+        <img src="images/Parallax_Hero/3_wide.png" id="B2">
+        <img src="images/Parallax_Hero/4_wide.png" id="B3">
+        <img src="images/Parallax_Hero/5_wide.png" id="B4">
+        <img src="images/Joshi_Art_Logo.png" id="Logo">
+    </section>
+    <div class="transition"></div>
+    <div class="aboutme">
+        <h2>Thats Me!</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ducimus omnis deleniti voluptatibus officia ratione vel? Quam rem impedit eligendi natus, illum magni eaque, quae magnam reprehenderit voluptate, temporibus veniam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, saepe quisquam earum iste minima, accusantium corrupti mollitia dignissimos aut recusandae explicabo nemo eveniet dolore quasi perspiciatis et reiciendis a aliquam? <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugiat, iure quibusdam cum, at veritatis voluptatem ducimus quam dolorum, est deserunt vitae facere placeat id eos explicabo perspiciatis non repudiandae!
+        </p>
     </div>
-</div>
-    <footer></footer>
 
-    <script src="app.js"></script>
+    <script>
+        let B0 = document.getElementById('B0');
+        let B1 = document.getElementById('B1');
+        let B2 = document.getElementById('B2');
+        let B3 = document.getElementById('B3');
+        let B4 = document.getElementById('B4');
+        let Logo = document.getElementById('Logo');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            B0.style.top = value * 1 + 'px';
+            B1.style.top = value * 0.9 + 'px';
+            B2.style.top = value * 0.8 + 'px';
+            B3.style.top = value * 0.7 + 'px';
+            B4.style.top = value * 0.6 + 'px';
+            Logo.style.top = value * -2 + 'px';
+        })
+    </script>
 </body>
 </html>

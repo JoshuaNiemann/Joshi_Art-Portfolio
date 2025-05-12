@@ -1,250 +1,117 @@
 *{
     margin: 0;
     padding: 0;
-    scrollbar-width: none;
+    box-sizing: border-box;
 }
 
 body{
-    height: 100%;
-    font-size: 4em;
-    color: white;
-    background-color: #193d24;
-    overflow: hidden;
-}
-
-/* ======================= NAVBAR ===================== */
-/*#region*/
-
-.navbar {
-    background: rgb(24, 37, 32);
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: top;
-    z-index: 1000;
-}
-
-
-
-/*#endregion*/
-
-
-/* ======================= Content ===================== */
-/*#region Content*/
-
-.parallax_wrapper{
-    height: 100vh;
+    min-height: 100vh;
+    background-color: rgb(9, 77, 31);
+    scroll-behavior: smooth;
     overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 100px;
-    scroll-snap-type: y proximity;
-    position: relative;
 }
 
-.hero_screen {
-    scroll-snap-align: none;
-    position: relative;
-    height: 100vh;
-    z-index: -1;
-}
-.aboutMe_screen {
-    scroll-snap-align: start;
-    height: 100vh;
-    position: relative;
-    
-}
-.outro_screen {
-    scroll-snap-align: start;
-    max-height: 100vh;
-    z-index: 11;
-}
+/* ===== Header ===== */
 
-/* ------------------------ */
-
-.parallax_group {
-    position: relative;
-    width: auto;
-    transform-style: preserve-3d;
-    height: 100vh;
-    overflow-y: 300vh;
-}
-
-.parallax_layer {
+header{
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
     display: flex;
-    justify-content: center;
-    align-items: top;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
 }
-
-
-/* --------------- LAYERS --------------------- */
-
-.B1_layer {
-    /* scale calculation: 1+ ((Z transform value * -1) / perspective) */
-    transform: translateZ(-10000px) scale(240);
-    z-index: 1;
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
-.B2_layer {
-    transform: translateZ(-5000px) scale(3.38);
-    z-index: 2;
-}
-.B3_layer {
-    transform: translateZ(-2000px) scale(49.9);
-    z-index: 3;
-}
-.B4_layer {
-    transform: translateZ(-700px) scale(3.025);
-    z-index: 4;
-}
-.B5_layer {
-    transform: translateZ(-1000px) scale(26.15);
-    z-index: 5;
-}
-.B6_layer {
-    transform: translateZ(-500px) scale(2.67);
-    z-index: 6;
-}
-.B7_layer {
-    transform: translateZ(-500px) scale(14.28);
-    z-index: 7;
-}
-.B8_layer {
-    transform: translateZ(-300px) scale(2.312);
-    z-index: 8;
-}
-.B9_layer {
-    transform: translateZ(-250px) scale(8.34);
-    z-index: 10;
-}
-.B10_layer {
-    transform: translateZ(-100px) scale(1.956);
-    z-index: 11;
-}
-.Base_layer {
-    transform: translateZ(0) scale(2.38);
-    z-index: 12;
-}
-.T1_layer {
-    transform: translateZ(300px) scale(1.25);
-    z-index: 13;
-}
-.T2_layer {
-    transform: translateZ(0) scale(1);
-    z-index: 14;
-}
-
-/* -------------- Hero -----------------*/
-
-#hero {
-    height: 100vh;
-    background-clip: content-box;
-}
-
- #hero > .B1_layer {
-    background-image: url('images/Parallax_Hero/1_wide.png');
-    background-size: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-}
- 
-#hero > .B3_layer {
-    background-image: url('images/Parallax_Hero/2_wide.png');
-    background-size: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#hero > .B5_layer {
-    background-image: url('images/Parallax_Hero/3_wide.png');
-    background-size: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#hero > .B7_layer {
-    background-image: url('images/Parallax_Hero/4_wide.png');
-    background-size: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#hero > .B9_layer {
-    background-image: url('images/Parallax_Hero/5_wide.png');
-    background-size: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.Logo {
+header ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
 }
-.Logo-img {
-    transform: translateY(-30%);
-    padding: 0;
-    margin: 0;
-    width: min(90vh, 90%);
+header ul li{
+    list-style: none;
+    margin-left: 20px;
 }
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+header ul li a:hover,
+header ul li a.active{
+    background: #fff;
+    color: rgb(10, 54, 25);
+} 
 
+/* ===== Parallax ===== */
 
-/* #hero > .Base_layer {
-    background-image: url('images/Parallax_Hero/6.png');
-    background-size: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-} */
-
-/* ---------------- 2. Screen ---------------*/
-
-.aboutMe_screen{
+section {
+    position: relative;
+    width: 100%;
     height: 100vh;
-    display: flex;
+    padding: 100px;
     justify-content: center;
     align-items: center;
-    z-index: 10;
-    /* border: 0.1px solid red; */
 }
 
-#intro > .Base_layer{
-    background-image: url(images/Parallax_Hero/full2_wide.png);
-    background-size: 100vh;
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+section #Logo{
+    position: absolute;
+    scale: 0.4;
+    align-self: center;
+    white-space: nowrap;
+    overflow-y: visible;
+    transform: translate(-50%, -30%);
+
+}
+
+.transition{
+    position: relative;
+    height: 100vh;
+    background-image: url("images/Parallax_Hero/full2_wide.png");
+    background-size: cover;
     background-position: center; 
-    background-repeat: no-repeat; 
-    background-clip: content-box;
-
+    background-repeat: no-repeat;
 }
 
+/* ===== About Me ===== */
 
-/* ---------------- 3. Screen ---------------*/
-
-.outro_screen{
-    background-color: #193d24;
+.aboutme {
+    position: relative;
+    padding: 100px;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 11;
-    /* border: 0.1px solid red; */
-}
-
-#outro > .Base_layer {
-    /* background-image: url(images/Parallax_Hero/full_wide.png); */
-    background-size: 100vh;
+    background-image: url("images/Parallax_Hero/full_wide.png");
+    background-size: cover;
     background-position: center; 
-    background-repeat: no-repeat; 
-    background-clip: content-box;
+    background-repeat: no-repeat;
 }
-
-
-/*#endregion Content*/
-
+.aboutme h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.aboutme p{
+    font-size: 1em;
+    color: #fff;
+}
 
 
